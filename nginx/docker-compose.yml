@@ -5,11 +5,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: apache:bbr
+    image: nginx:bbr
     ports:
       - "80:80"
     volumes:
-      - ../web:/var/www/html/
+      - ../web:/usr/share/nginx/html
     networks:
       - default
 
