@@ -1,0 +1,17 @@
+{
+    "name": "demo/php",
+    "description": "demo anvendelse af php docker containere",
+    "type": "project",
+    "require-dev": {
+        "symfony/dotenv": "^4.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bent Brundtoe",
+            "email": "brundtoe@outlook.dk"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
