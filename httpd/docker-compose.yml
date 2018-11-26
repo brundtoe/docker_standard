@@ -9,7 +9,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      #- phpsocket:/sock
+      - phpsocket:/run/php
       - ../web/:/var/www/html/
       - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
       - ./demo.apache.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
@@ -20,9 +20,9 @@ services:
   php:
     image: php_fpm:bbr
     volumes:
-      #- phpsocket:/sock
+      - phpsocket:/run/php
       - ../web/:/var/www/html/
-      #- ./zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
+      - ./zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
     container_name: php
     networks:
       - default
