@@ -10,7 +10,8 @@ services:
       - "80:80"
     volumes:
       - ../web:/usr/local/apache2/htdocs
-#      - ./default.conf:/usr/local/apache2/conf/httpd.conf
+      - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
+     # - ./httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
     networks:
       - default
 
