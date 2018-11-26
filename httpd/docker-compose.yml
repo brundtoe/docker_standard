@@ -11,7 +11,7 @@ services:
     volumes:
       - ../web:/usr/local/apache2/htdocs
       - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
-     # - ./httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
+      - ./httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
     networks:
       - default
 
