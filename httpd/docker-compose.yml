@@ -1,7 +1,7 @@
 version: '3.3'
 
 services:
-  demo:
+  apache:
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,12 +9,24 @@ services:
     ports:
       - "80:80"
     volumes:
-      - phpsocket:/sock
-      - ../web:/usr/local/apache2/htdocs
+      #- phpsocket:/sock
+      - ../web/:/var/www/html/
       - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
-      - ./httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
+      - ./demo.apache.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
+    container_name: apache
     networks:
       - default
+
+  php:
+    image: php_fpm:bbr
+    volumes:
+      #- phpsocket:/sock
+      - ../web/:/var/www/html/
+      #- ./zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
+    container_name: php
+    networks:
+      - default
+
 
 networks:
   default:

@@ -1,0 +1,24 @@
+version: '3.3'
+# NB det er kun src/index.html filen, der kan vises da php-fpm ikke er implementeret
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: php_fpm:bbr
+    volumes:
+      - phpsocket:/sock
+      - ../web:/usr/local/apache2/htdocs
+      - ./zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: humle_net
+
+
+volumes:
+  phpsocket:
+    external: true
