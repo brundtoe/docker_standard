@@ -1,6 +1,8 @@
 # Standard Docker images
 
-Dete projekt indeholder definitionen af en række Docker images, der anvendes som standard i mine php applikationer, samt docker-compose og Apache og php-fpm konfigurationsfiler
+Dette projekt indeholder definitionen af en række Docker images, der anvendes som standard i mine php applikationer, samt docker-compose og Apache og php-fpm konfigurationsfiler
+
+Alle images tager udgangspunkt i Docker Hub *debian:stretch* 
 
 ## apache-php
 Imaget, *apache:bbr* er baseret på *php:7.2-apache*.
