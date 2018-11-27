@@ -6,7 +6,8 @@
  * Time: 16:33
  */
 require_once "../bootstrap.php";
-echo "<h1>Dette er en side fra mappen src</h1>";
+echo "<h1>Dette er en side med environment variable</h1>";
+echo "<h3>Variable er indlæst under anvendelse af symfon/dotenv</h3>";
 echo "<pre>";
 print_r($_ENV);
 echo "</pre>";
