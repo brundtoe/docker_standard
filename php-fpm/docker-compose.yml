@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     image: php_fpm:bbr
     volumes:
-      - phpsocket:/sock
+      - phpsocket:/run/php/
       - ../web:/var/www/html
       - ./zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
     networks:
