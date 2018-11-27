@@ -1,15 +1,24 @@
 version: '3.3'
 # NB det er kun src/index.html filen, der kan vises da php-fpm ikke er implementeret
 services:
-  php:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: php_fpm:bbr
+  apache:
+    image: httpd:bbr
+    container_name: apache
+    ports:
+      - "80:80"
     volumes:
-      - phpsocket:/sock
-      - ../web:/usr/local/apache2/htdocs
-      - ./zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
+      - ../web/:/var/www/html/
+      - ./default.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
+
+    networks:
+      - default
+
+  php:
+    image: php_fpm:bbr
+    container_name: php
+    volumes:
+      - ../web/:/var/www/html/
+#      - ./zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
     networks:
       - default
 
@@ -17,8 +26,3 @@ networks:
   default:
     external:
       name: humle_net
-
-
-volumes:
-  phpsocket:
-    external: true

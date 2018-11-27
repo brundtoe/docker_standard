@@ -6,14 +6,15 @@ services:
       context: .
       dockerfile: Dockerfile
     image: httpd:bbr
+    container_name: apache
     ports:
       - "80:80"
     volumes:
       - phpsocket:/run/php/
       - ../web/:/var/www/html/
-#      - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
+      #      - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
       - ./default.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
-    container_name: apache
+
     networks:
       - default
 
@@ -26,7 +27,6 @@ services:
     container_name: php
     networks:
       - default
-
 
 networks:
   default:
