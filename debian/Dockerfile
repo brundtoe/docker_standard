@@ -1,3 +1,3 @@
 FROM debian:stretch
 
-# anvendes pt ikke
+# anvendes pt ikke som selvtændigt image
