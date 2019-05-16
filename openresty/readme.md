@@ -11,7 +11,7 @@ Hent docker image
 -----------------
 Det kan være nødvendigt at logge ind med **docker login**
 ```
-docker pull docker pull openresty/openresty:1.13.6.2-stretch
+docker pull openresty/openresty:1.13.6.2-stretch
 ```
 
 Konfigurationsfiler
