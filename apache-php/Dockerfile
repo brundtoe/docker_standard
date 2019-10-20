@@ -20,6 +20,7 @@ RUN docker-php-ext-install mysqli pdo_mysql xsl intl &&\
 RUN curl -sSk https://getcomposer.org/installer | php -- --disable-tls && \
     mv composer.phar /usr/local/bin/composer
 
+RUN a2enmod rewrite
 COPY xdebug-connect-back.ini /usr/local/etc/php/conf.d/docker-php-ext.xdebug.ini
 
 RUN groupadd dev -g 999 && \

@@ -1,0 +1,37 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  web:
+    image: websites-vue:bbr
+    container_name: web
+    restart: always
+    volumes:
+      - phpsocket:/run/php
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./backend:/var/www/html
+    ports:
+      - 80:80
+      - 8000:8000
+    networks:
+      - default
+
+  php:
+    image: php_fpm:bbr
+    container_name: php
+    volumes:
+      - phpsocket:/run/php/
+      - ./backend:/var/www/html
+      - ./zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: humle_net
+
+volumes:
+  phpsocket:
+    external: true
