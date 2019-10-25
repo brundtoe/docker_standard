@@ -9,9 +9,10 @@ Kilder
 -
 Hent docker image
 -----------------
-Det kan være nødvendigt at logge ind med **docker login**
+Tjek via dcker hub og github repository tags for at finde den rigtige version
+
 ```
-docker pull openresty/openresty:1.13.6.2-stretch
+docker pull openresty/openresty:1.15.8.2-4-stretch
 ```
 
 Konfigurationsfiler

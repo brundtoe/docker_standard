@@ -2,7 +2,7 @@ version: '3.3'
 # NB det er kun src/index.html filen, der kan vises da php-fpm ikke er implementeret
 services:
   web:
-    image: openresty/openresty:1.13.6.2-stretch
+    image: openresty/openresty:1.15-stretch
     container_name: web
     volumes:
       - phpsocket:/run/php/

@@ -5,8 +5,9 @@ Dette image bygger på nginx. Det er opbygget med henblik på at builde et image
 Det anvendes i projekt :ref:`websites-vue <websites-vue>`
 
 ```
-docker build -t webites-vue .
+  docker build -t webites-vue .
+```
 
 husk det afsluttende punktum
 
-
+# kan kun buildes i et projekt da der skal kopieres source code

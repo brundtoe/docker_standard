@@ -1,5 +1,5 @@
 # nginx/Dockerfile
-FROM openresty/openresty:1.13.6.2-stretch
+FROM openresty/openresty:1.15.8.2-4-stretch
 
 RUN apt-get update && apt-get install -y \
     nano \

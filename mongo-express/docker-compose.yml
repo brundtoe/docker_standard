@@ -1,0 +1,31 @@
+version: '3.3'
+
+services:
+
+   browser:
+    image: mongo-express:0.49
+    container_name: browser
+    ports:
+      - 8081:8081
+    depends_on:
+      - mongodb
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongodb
+
+   mongodb:
+    image: mongo:4-bionic
+    container_name: mongodb
+    volumes:
+      - mongodata:/data/db
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: humle_net
+
+volumes:
+  mongodata:
+    external: true
+

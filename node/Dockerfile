@@ -1,6 +1,6 @@
 # node/Dockerfile
 # kan ikke køre selvstændigt men grundlag for projekt specifik Dockerfile
-FROM node:10
+FROM node:12-buster
 
 RUN apt-get update && apt-get install -y \
     nano \

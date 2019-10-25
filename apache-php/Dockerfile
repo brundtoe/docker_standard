@@ -1,6 +1,6 @@
 # imaget anvender debian stretch
 
-FROM php:7.2-apache
+FROM php:7.2-apache-buster
 
 RUN apt-get update && apt-get install -y \
     git nano \
