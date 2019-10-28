@@ -3,7 +3,7 @@ version: '3.3'
 services:
 
    browser:
-    image: mongo-express:0.49
+    image: mongo-express:bbr
     container_name: browser
     ports:
       - 8081:8081
@@ -13,7 +13,7 @@ services:
       ME_CONFIG_MONGODB_SERVER: mongodb
 
    mongodb:
-    image: mongo:4-bionic
+    image: mongo:bbr
     container_name: mongodb
     volumes:
       - mongodata:/data/db

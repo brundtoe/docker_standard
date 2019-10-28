@@ -1,5 +1,12 @@
-# mongodb
+# MongoDB
 
-Der har htidl ikke være tbehov for et tilpsset image
+Der tilføjes installation af nano
 
-Se vejledning om mine docker images for konfiguration
+## Build
+
+docker build -t mongo:bbr .
+
+
+## docker-compose
+
+se mongo-express for et eksempel
