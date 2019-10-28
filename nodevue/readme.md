@@ -12,4 +12,8 @@ nodevue:bbr importerer Vue Command Line Interface og vue-cli-service, som er en 
 docker build -t nodevue:bbr .
 
 
+## modifikation
 
+copy af package.json til imaget og den efterfølgende npm install er disabled, da der i development udgave alligevel linkse fra hostes sourcecode og dermed overrules indholdet i node_modules i containeren
+
+Det betyder at imaget kan anvendes generelt i alle Vue apps til docker-compose-develop.yml
