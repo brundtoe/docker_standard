@@ -5,7 +5,7 @@ Dette projekt indeholder definitionen af en række Docker images, der anvendes s
 Alle images tager udgangspunkt i Docker Hub *debian:stretch* 
 
 ## apache-php
-Imaget, *apache:bbr* er baseret på *php:7.2-apache*.
+Imaget, *apache:bbr* er baseret på *php:7.3-apache-buster*.
 
 ```
 docker build -t apache:bbr .
@@ -17,7 +17,7 @@ Imaget, *httpd:bbr* er baseret på *httpd:2.4*
 docker build -t httpd:bbr .
 ```
 * docker-compose.yml anvender image *php_fpm:bbr*
-* Der anvendes en unix socket */run/php/php7.2-fpm.sock*
+* Der anvendes en unix socket */run/php/php7.3-fpm.sock*
 
 ## ningx
 Imaget *nginx:bbr* er baseret på *ningx:1.5*
@@ -26,10 +26,10 @@ Imaget *nginx:bbr* er baseret på *ningx:1.5*
 docker build -t ningx:bbr .
 ```
 * docker-compose.yml anvender image *php_fpm:bbr*
-* Der anvendes en unix socket */run/php/php7.2-fpm.sock* 
+* Der anvendes en unix socket */run/php/php7.3-fpm.sock* 
 
 ## php-fpm
-Imaget *php_fpm:bbr* er baseret på php:7.2-fpm
+Imaget *php_fpm:bbr* er baseret på php:7.3-fpm
 
 ```
 docker build -t php_fpm:bbr .
@@ -42,7 +42,7 @@ Kan anvendes med unix socket eller tcp på port 9000
 * Der anvendes http tcp på port 9000
 
 ## web
-Denne mappe indeholder en enkel php applikatipon, som anvendes til at afprøve ovenstående konfigurationer af Docker containere.
+Denne mappe indeholder en enkel php applikation, som anvendes til at afprøve ovenstående konfigurationer af Docker containere.
 
 Applikationen initieres ved at starte apache-php med
 
