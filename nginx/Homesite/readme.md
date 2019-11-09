@@ -4,6 +4,34 @@ Opdateret november 2019
 
 Mappen indeholder en kopi af nginx konfigurationsfiler, som er kopieret fra kørende Homestead instanser
 
+## Homestead skabeloner
+
+Homestead anvender scripts som indeholder en skabelon til at opbygge nignx og andre konfiguraitonsfiler. Der overføres variable fra Homested.rb. Disse variable stammer i en stor udstrækning fra Homestead.yaml.
+
+Skabelonerne/scripts findes i en Homestea installation i
+
+- scripts/site-types
+- vendor/laravel/homestead/scripts/site-types
+
+For nginx anvendes som grundmodel **modx.sh**
+
+
+## project devops/code
+
+Dette er den første model jeg har anvendt. Den er svær at læse da der inkluderes
+
+- /etc/nginx/snippets/fastcgi-php.conf som inkluderer
+- /etc/nginx/fastcgi.conf
+
+Kilde: git repository https://github.com/brundtoe/pupptcode.git
+
+- devops/code/environments/production/site/profile/files/nginxdev.conf
+
+Modellen er afhængig af de to filer, der inkludres og derfor svær at portere til et andet operativsystem
+
+
+
+
 
 ## projects/laravel/Homebox/php
 
@@ -29,7 +57,7 @@ sites:
     - map: production.test
       to: /home/vagrant/code/frontend/dist
 
-**Dokumenteret i filerne:**
+**DKilde**
 
 - production.test
 - backend-test
@@ -64,7 +92,7 @@ backend er en proxy unix:/var/run/php/php7.3-fpm.sock
 
 ## projects/laravel/Homestead/javascript
 
-filnavn: express.test
+Kilde: express.test
 
 Denne konfiguration indeholder en række javascript projekter, som anvender node som webserver.
 

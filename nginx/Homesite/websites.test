@@ -10,7 +10,7 @@ server {
 
     location / {
         try_files $uri $uri/ /index.php?$query_string;
-        
+
     }
 
     location = /favicon.ico { access_log off; log_not_found off; }
@@ -23,13 +23,27 @@ server {
 
     client_max_body_size 100m;
 
+## denne model er default og løser udforringer hvis php_fpm er placeret på en anden
+## server end en frontend
     location ~ \.php$ {
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
         fastcgi_pass unix:/var/run/php/php7.3-fpm.sock;
         fastcgi_index index.php;
         include fastcgi_params;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        
+
+
+## alternativ realpath_root løsedr udfordringer med cache og symlinks
+#    location ~ \.php$ {
+#        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+#        fastcgi_pass unix:/var/run/php/php7.3-fpm.sock;
+#        fastcgi_index index.php;
+#        include fastcgi_params;
+#        include fastcgi_params;
+#        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+#        fastcgi_param DOCUMENT_ROOT $realpath_root;
+#    }
+
 
         fastcgi_intercept_errors off;
         fastcgi_buffer_size 16k;
