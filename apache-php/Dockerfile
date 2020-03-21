@@ -3,7 +3,7 @@
 FROM php:7.3-apache-buster
 
 RUN apt-get update && apt-get install -y \
-    git nano \
+    git nano acl\
     libxslt1.1 libxslt1-dev
 
 # krævet for at få Composer til at fungere, som del af imaget
