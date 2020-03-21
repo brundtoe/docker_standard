@@ -1,6 +1,6 @@
 # mongo-express
 
-der er ikke lavet et custom image
+docker build -t mongo-express:bbr .
 
 filen docker-compose.yml viser, hvad der er netop tilstrækkeligt til at connecte til en mongo database.
 

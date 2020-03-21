@@ -9,10 +9,10 @@ Kilder
 -
 Hent docker image
 -----------------
-Tjek via dcker hub og github repository tags for at finde den rigtige version
+Tjek via docker hub og **github repository tags** for at finde den rigtige version
 
 ```
-docker pull openresty/openresty:1.15.8.2-4-stretch
+docker pull openresty/openresty:1.15.8.2-7-buster
 ```
 
 Konfigurationsfiler
