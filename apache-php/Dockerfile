@@ -1,6 +1,6 @@
 # imaget anvender debian stretch
 
-FROM php:7.3-apache-buster
+FROM php:7.4-apache-buster
 
 RUN apt-get update && apt-get install -y \
     git nano acl\
@@ -10,12 +10,12 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get install -y \
         libzip-dev \
         zip &&\
-     docker-php-ext-configure zip --with-libzip &&\
      docker-php-ext-install zip &&\
+     docker-php-ext-configure zip  &&\
      rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-install mysqli pdo_mysql xsl intl &&\
-    pecl install xdebug-2.7.2 && docker-php-ext-enable xdebug
+    pecl install xdebug-2.8.1 && docker-php-ext-enable xdebug
 
 RUN curl -sSk https://getcomposer.org/installer | php -- --disable-tls && \
     mv composer.phar /usr/local/bin/composer
