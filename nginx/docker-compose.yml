@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.7'
 # NB det er kun src/index.html filen, der kan vises da php-fpm ikke er implementeret
 services:
   web:

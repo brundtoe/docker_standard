@@ -1,5 +1,5 @@
 # php-fpm/Dockerfile
-FROM php:7.3-fpm-buster
+FROM php:7.4-fpm-buster
 
 RUN apt-get update && apt-get install -y \
     nano \
@@ -7,12 +7,12 @@ RUN apt-get update && apt-get install -y \
     libxslt1.1  libxslt1-dev 
 
 # krævet for at få Composer til at fungere, som del af imaget
-RUN  docker-php-ext-configure zip --with-libzip &&\
+RUN  docker-php-ext-configure zip &&\
      docker-php-ext-install zip &&\
      rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-install mysqli pdo_mysql xsl intl &&\
-    pecl install xdebug-2.7.2 && docker-php-ext-enable xdebug
+    pecl install xdebug-2.9.3 && docker-php-ext-enable xdebug
 
 #ENV BUILDPATH =/home/bent/sourcecode/nginxsocket/php-fpm
 RUN curl -sSk https://getcomposer.org/installer | php -- --disable-tls && \
