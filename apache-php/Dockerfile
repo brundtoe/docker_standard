@@ -15,7 +15,7 @@ RUN apt-get install -y \
      rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-install mysqli pdo_mysql xsl intl &&\
-    pecl install xdebug-2.8.1 && docker-php-ext-enable xdebug
+    pecl install xdebug-2.9.3 && docker-php-ext-enable xdebug
 
 RUN curl -sSk https://getcomposer.org/installer | php -- --disable-tls && \
     mv composer.phar /usr/local/bin/composer
