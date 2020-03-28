@@ -2,6 +2,5 @@
 
 docker image build -t php_fpm:bbr .
 
-kan ikke builde med 7.4
+Under build tilføjes de nødvendige linjer til xdebug.ini
 
-Kan ikke builde fejl med --with libzip
