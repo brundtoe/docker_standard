@@ -1,0 +1,60 @@
+version: '3.6'
+
+services:
+  web:
+    image: httpd:bbr
+    container_name: web_httpd
+    ports:
+      - "80:80"
+    volumes:
+      - phpsocket:/run/php/
+      - ./web:/var/www/html
+      - ./httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
+    networks:
+      - default
+
+  php:
+    image: php_fpm:bbr
+    container_name: php
+    volumes:
+      - phpsocket:/run/php/
+      - ./web:/var/www/html
+      - ./zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
+    networks:
+      - default
+
+  mysql:
+    image: mysql:bbr
+    command: "--default-authentication-plugin=mysql_native_password"
+    container_name: mysql
+    volumes:
+      - mysqldata:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: bookstore
+      MYSQL_USER: athlon38
+      MYSQL_PASSWORD: trine-73-glf
+    networks:
+      - default
+
+  phpmyadmin:
+    image: phpmyadmin:bbr
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    ports:
+      - 8080:80
+    networks:
+      - default
+
+networks:
+  default:
+    external:
+      name: humle_net
+
+volumes:
+  phpsocket:
+    external: true
+  mysqldata:
+    external: true
