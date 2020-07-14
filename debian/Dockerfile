@@ -1,3 +1,3 @@
-FROM debian:stretch
+FROM debian:buster
 
 # anvendes pt ikke som selvtændigt image

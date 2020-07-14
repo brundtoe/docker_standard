@@ -2,12 +2,12 @@ version: '3.3'
 # NB det er kun src/index.html filen, der kan vises da php-fpm ikke er implementeret
 services:
   web:
-    image: openresty/openresty:1.15-stretch
+    image: openresty:bbr
     container_name: web
     volumes:
       - phpsocket:/run/php/
       - ./default.conf:/etc/nginx/conf.d/default.conf
-      - ./web:/usr/local/openresty/nginx/html
+      - ../web:/usr/local/openresty/nginx/html
     ports:
       - "80:80"
     networks:
@@ -18,7 +18,7 @@ services:
     container_name: php
     volumes:
       - phpsocket:/run/php/
-      - ./web:/usr/local/openresty/nginx/html
+      - ../web:/usr/local/openresty/nginx/html
       - ./zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
     networks:
       - default

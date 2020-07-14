@@ -1,5 +1,5 @@
 # nginx/Dockerfile
-FROM nginx:1.17
+FROM nginx:1.19
 
 RUN apt-get update && apt-get install -y \
     nano \

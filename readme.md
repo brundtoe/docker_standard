@@ -20,7 +20,7 @@ docker build -t httpd:bbr .
 * Der anvendes en unix socket */run/php/php7.4-fpm.sock*
 
 ## ningx
-Imaget *nginx:bbr* er baseret på *ningx:1.5*
+Imaget *nginx:bbr* er baseret på *ningx:1.19*
 
 ```
 docker build -t ningx:bbr .
