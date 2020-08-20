@@ -15,7 +15,7 @@ Nu opdateres Dockerfile
 juli 2020 skiftet fra buster til focal da buster fejlede
 
 ```
-docker pull openresty/openresty:1.17.8.1-buster
+docker pull openresty/openresty:1.17.8.1-focal
 ```
 
 Konfigurationsfiler
