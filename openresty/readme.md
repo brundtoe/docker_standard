@@ -9,13 +9,13 @@ Kilder
 -
 Hent docker image
 -----------------
-Tjek via docker hub fanebladet tags for at finde den rigtige version her søges eksempelvis efter **focal** og docker pul kommandoen kopieres og indsættes som vist nedenfor. 
+Tjek via docker hub fanebladet tags for at finde den rigtige version her søges eksempelvis efter **focal** og docker pull kommandoen kopieres og indsættes som vist nedenfor. 
 Nu opdateres Dockerfile
 
 juli 2020 skiftet fra buster til focal da buster fejlede
 
 ```
-docker pull openresty/openresty:1.17.8.1-focal
+docker pull openresty/openresty:1.17.8.2-focal
 ```
 
 Konfigurationsfiler

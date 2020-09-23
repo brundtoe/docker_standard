@@ -1,5 +1,5 @@
 # nginx/Dockerfile
-FROM openresty/openresty:1.17.8.1-focal
+FROM openresty/openresty:1.17.8.2-focal
 
 RUN apt-get update && apt-get install -y \
     nano \
