@@ -2,7 +2,17 @@
 
 Dette projekt indeholder definitionen af en række Docker images, der anvendes som standard i mine php applikationer, samt docker-compose og Apache og php-fpm konfigurationsfiler
 
-Alle images tager udgangspunkt i Docker Hub *debian:stretch* 
+Start med at kontrollere og evt opdater versionsnumre på de anvendte images der uplles fra hub.docker.com
+
+opdatering foretages i de enkelte DOckerfiles og i **docker-build.sh**
+
+Images kan buildes i et hug med:
+
+```
+sudo ./docker-build.sh
+```
+
+Alle images tager hvor muligt udgangspunkt i Docker Hub *debian:buster* 
 
 ## apache-php
 Imaget, *apache:bbr* er baseret på *php:7.4-apache-buster*.
