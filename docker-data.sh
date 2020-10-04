@@ -16,6 +16,7 @@ docker volume create phpsocket
 cd /var/lib/docker/volumes/sqlitedata/_data
 cp -r /home/jackie/dumps/sqlite/doctrine26/bookstore-data/* .
 cd ..
-chgrp -R www-data _data
+HTTPDUSER=`ps aux | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1`
+chgrp -R $HTTPDUSER _data
 find _data -type d -exec chmod 775 {} +
 find _data -type f -exec chmod 664 {} +
