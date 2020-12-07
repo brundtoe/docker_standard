@@ -15,7 +15,7 @@ docker pull phpmyadmin/phpmyadmin:5.0
 
 cd /home/projects/sourcecode/docker/docker_standard
 
-docker build -f apache-php/Dockerfile -t apache:bbr apache-php
+docker build -f apache/Dockerfile -t apache:bbr apache
 docker build -f httpd/Dockerfile -t httpd:bbr httpd
 docker build -f mongo-express/Dockerfile -t mongo-express:bbr mongo-express
 docker build -f mongo/Dockerfile -t mongo:bbr mongo 

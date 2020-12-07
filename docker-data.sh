@@ -1,17 +1,22 @@
 #!/usr/bin/env bash
 #
-# Dette script udføres kun een gang i hver installation
-#
-# Det vil fejle anden gang det forsøges udført
 
 set -e
 
-docker network create humle_net
+if ! [ "$(id -u)" = 0 ]; then
+  echo "Script must be run as user: root"
+  exit 1  
+fi    
 
-docker volume create mysqldata
-docker volume create sqlitedata
-docker volume create mongodata
-docker volume create phpsocket
+docker network inspect humle_net || docker network create humle_net
+
+docker volume inspect mysqldata || docker volume create mysqldata
+
+docker volume inspect sqlitedata || docker volume create sqlitedata
+
+docker volume inspect mongodata || docker volume create mongodata
+
+docker volume inspect phpsocket || docker volume create phpsocket
 
 cd /var/lib/docker/volumes/sqlitedata/_data
 cp -r /home/jackie/dumps/sqlite/doctrine26/bookstore-data/* .
