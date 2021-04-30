@@ -4,7 +4,7 @@ docker image build -t apache:bbr .
 
 Under build tilføjes de nødvendige linjer til xdebug.ini
 
-pr juli 2020 builded med php7.4-apache-buster
+pr april 2021 builded med php8.0-apache-buster
 
 tjekket via **docker-compose up -d**
 

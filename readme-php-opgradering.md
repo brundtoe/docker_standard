@@ -31,10 +31,9 @@ build images med **docker-build.sh**
 ### php_fpm versionen
   - dockerfile
     - base image 8.0-fpm-buster
-    - xdebug versionen som skal svare til php versionen for 7.4 er det xdebug-3.x.x
-  - socket-default.conf til httpd:bbr opdater socket til 7.4
+    - xdebug versionen som skal svare til php versionen for 8.0 er det xdebug-3.x.x
+  - socket-default.conf til httpd:bbr opdater socket til 8.0
   
-
 ### opdatering af konfigurationsfiler
 
 Konfigurationsfiler i projekter som anvender php_fpm skal opdateres

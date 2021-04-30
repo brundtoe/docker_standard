@@ -18,9 +18,9 @@ RUN docker-php-ext-install mysqli pdo_mysql xsl intl &&\
 RUN curl -sSk https://getcomposer.org/installer | php -- --disable-tls && \
     mv composer.phar /usr/local/bin/composer
 
-#RUN sed -i -e 'a\xdebug.remote_enable=1' \
-#    -e 'a\xdebug.remote_connect_back=1' \  
-#    /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+RUN sed -i -e 'a\xdebug.mode=debug' \
+    -e 'a\xdebug.client_host=172.18.0.1' \
+    /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 RUN groupadd dev -g 999 && \
     useradd dev -g dev -d /home/dev -m && \
