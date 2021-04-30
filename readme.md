@@ -27,7 +27,7 @@ Imaget, *httpd:bbr* er baseret på *httpd:2.4*
 docker build -t httpd:bbr .
 ```
 * docker-compose.yml anvender image *php_fpm:bbr*
-* Der anvendes en unix socket */run/php/php7.4-fpm.sock*
+* Der anvendes en unix socket */run/php/php8.0-fpm.sock*
 
 ## ningx
 Imaget *nginx:bbr* er baseret på *ningx:1.19*
@@ -36,7 +36,7 @@ Imaget *nginx:bbr* er baseret på *ningx:1.19*
 docker build -t ningx:bbr .
 ```
 * docker-compose.yml anvender image *php_fpm:bbr*
-* Der anvendes en unix socket */run/php/php7.4-fpm.sock* 
+* Der anvendes en unix socket */run/php/php8.0-fpm.sock* 
 
 ## php-fpm
 Imaget *php_fpm:bbr* er baseret på php:7.4-fpm

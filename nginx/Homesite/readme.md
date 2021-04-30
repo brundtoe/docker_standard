@@ -88,7 +88,7 @@ sites:
 
 Jeg har i forhold til Homestead standarden indsat root direktiver de to locationsblocks
 
-backend er en proxy unix:/var/run/php/php7.4-fpm.sock
+backend er en proxy unix:/var/run/php/php8.0-fpm.sock
 
 ## projects/laravel/Homestead/javascript
 
