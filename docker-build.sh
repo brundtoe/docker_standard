@@ -6,12 +6,12 @@ docker pull httpd:2.4
 docker pull mongo:4.4-bionic
 docker pull mongo-express:0.54
 docker pull mysql:8
-docker pull nginx:1.19
+docker pull nginx:1.20
 docker pull node:14-buster
-docker pull openresty/openresty:1.17.8.2-focal
-docker pull php:7.4-fpm-buster
-docker pull php:7.4-apache-buster
-docker pull phpmyadmin/phpmyadmin:5.0
+docker pull openresty/openresty:1.19.3.1-6-buster
+docker pull php:8.0-fpm-buster
+docker pull php:8.0-apache-buster
+docker pull phpmyadmin/phpmyadmin:5.1
 
 cd /home/projects/sourcecode/docker/docker_standard
 

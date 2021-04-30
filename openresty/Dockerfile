@@ -1,5 +1,5 @@
 # nginx/Dockerfile
-FROM openresty/openresty:1.19.3.1-focal
+FROM openresty/openresty:1.19.3.1-6-buster
 
 RUN apt-get update && apt-get install -y \
     nano \
